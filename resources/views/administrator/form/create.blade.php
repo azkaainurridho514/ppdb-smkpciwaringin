@@ -1,8 +1,8 @@
 @extends('administrator.layouts.main')
 
-@section('title','PPDB | All Data')
+@section('title','PPDB | Create')
 
-@section('title-page', 'Daftar semua data peserta')
+@section('title-page', 'Add New Field Students')
 
 @section('container')
 <div class="card-header pb-0 mb-0 d-flex justify-content-end">
@@ -72,25 +72,25 @@
 
 
 
-           <form action="/forms" method="post">
-            @csrf
-        @foreach ($form as $f)
-            <div class="mb-3">
-                @switch($f->type)
-                    @case('text')
+            {{-- <form action="/forms" method="post">
+             @csrf
+                @foreach ($form as $f)
+                 <div class="mb-3">
+                    @switch($f->type)
+                        @case('text')
+                            <label class="form-label text-dark">{{ $f->nameLable }}</label>
+                            <input type="{{ $f->type }}" class="form-control @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
+                            @break
+                        @case('date')
+                            <label class="form-label text-dark">{{ $f->nameLable }}</label>
+                            <input type="{{ $f->type }}" class="form-control" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
+                            @break
+                        @case('textarea')
+                            <label class="form-label text-dark">{{ $f->nameLable }}</label>
+                            <textarea class="form-control" name="{{ $f->nameInput }}">{{ old($f->nameInput) }}</textarea>
+                            @break
+                        @case('select')
                         <label class="form-label text-dark">{{ $f->nameLable }}</label>
-                        <input type="{{ $f->type }}" class="form-control @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
-                        @break
-                    @case('date')
-                        <label class="form-label text-dark">{{ $f->nameLable }}</label>
-                        <input type="{{ $f->type }}" class="form-control" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
-                        @break
-                    @case('textarea')
-                        <label class="form-label text-dark">{{ $f->nameLable }}</label>
-                        <textarea class="form-control" name="{{ $f->nameInput }}">{{ old($f->nameInput) }}</textarea>
-                        @break
-                    @case('select')
-                    <label class="form-label text-dark">{{ $f->nameLable }}</label>
                         <select  class="form-select" name="{{ $f->nameInput }}">
                             @switch($f->select_id)
                                 @case('program')
@@ -107,10 +107,10 @@
                         @break
                         @default
                     @endswitch
-                </div>
+                 </div>
                 @endforeach
                 <button type="submit" class="btn btn-primary">kirim</button>
-            </form>
+            </form> --}}
 
 
 

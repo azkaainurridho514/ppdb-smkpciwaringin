@@ -16,7 +16,7 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('no_peserta', 16)->nullable();
-            $table->foreignId('program_id');
+            $table->foreignId('programId');
             $table->string('nama', 32);
             $table->string('nama_lengkap', 55);
             $table->date('tanggal_lahir', 55);

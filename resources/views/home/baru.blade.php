@@ -15,7 +15,50 @@
     </div>
     <div class="row" style="margin-top: 100px">
         <p class="fs-2 text-light text-center wel">Silahkan isi data dengan valid</p>
-        <div class="col-lg-5 wel mx-auto text-light py-3 px-3">
+        <div class="col-lg-6 wel mx-auto text-light py-3 px-3 shadow-lg">
+            <form action="/peserta-didik-baru" method="post">
+                @csrf
+            @foreach ($form as $f)
+                <div class="mb-3">
+                    @switch($f->type)
+                        @case('text')
+                            <label class="form-label text-light">{{ $f->nameLable }}</label>
+                            <input type="{{ $f->type }}" class="form-control @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
+                            @break
+                        @case('date')
+                            <label class="form-label text-light">{{ $f->nameLable }}</label>
+                            <input type="{{ $f->type }}" class="form-control @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}" value="{{ old($f->nameInput) }}">
+                            @break
+                        @case('textarea')
+                            <label class="form-label text-light">{{ $f->nameLable }}</label>
+                            <textarea class="form-control @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}">{{ old($f->nameInput) }}</textarea>
+                            @break
+                        @case('select')
+                        <label class="form-label text-light">{{ $f->nameLable }}</label>
+                            <select  class="form-select @error('{{ $f->nameLable }}') is-invalid @enderror" name="{{ $f->nameInput }}">
+                                @switch($f->select_id)
+                                    @case('program')
+                                     @foreach ($f->program as $p)
+                                        <option value="{{ $p->programId }}">{{ $p->nama }}</option>
+                                     @endforeach 
+                                        @break
+                                    @default
+                                    @foreach ($f->select as $s)
+                                        <option value="{{ $s->option }}">{{ $s->option }}</option>
+                                    @endforeach    
+                                @endswitch
+                            </select>
+                            @break
+                            @default
+                        @endswitch
+                    </div>
+                    @endforeach
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto" style="width: 80%">kirim</button>
+                    </div>
+                </form>
+        </div>
+        {{-- <div class="col-lg-5 wel mx-auto text-light py-3 px-3">
             <form action="/peserta-didik-baru" method="post">
                 @csrf
                 <div class="mb-3">
@@ -52,7 +95,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Program Keahlian Yang Di Pilih :</label>
-                    <select class="form-select @error('program') is-invalid @enderror" name="program_id">
+                    <select class="form-select @error('programId') is-invalid @enderror" name="program_id">
                         <option value="">-Pilih-</option>
                     @foreach ($programs as $program)
                     <option value="{{ $program->programId }}" {{ (old('program') == $program->programId )? 'selected' : '' }}> {{ $program->nama }}</option>
@@ -124,6 +167,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-1 px-5">Kirim</button>
             </form>
-            </div>
+        </div> --}}
     </div>
 @endsection

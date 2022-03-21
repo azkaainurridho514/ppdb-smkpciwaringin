@@ -19,6 +19,7 @@ class CreateProgramsTable extends Migration
             $table->string('nama', 55)->unique();
             $table->string('slug', 55)->unique();
             $table->string('kampus', 2);
+            $table->string('select_name');
             $table->timestamps();
         });
     }

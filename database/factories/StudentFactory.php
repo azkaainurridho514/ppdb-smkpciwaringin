@@ -19,7 +19,7 @@ class StudentFactory extends Factory
             'tanggal_lahir' => now(),
             'jk' => 'Laki - laki',
             'agama' => 'Islam',
-            'program_id' => 2,
+            'programId' => 2,
             'ukuran_baju' => 'L',
             'no_hp' => 1234567890123,
             'anak_ke' => '1',

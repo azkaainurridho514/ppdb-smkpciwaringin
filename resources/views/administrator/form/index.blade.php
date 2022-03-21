@@ -1,8 +1,8 @@
 @extends('administrator.layouts.main')
 
-@section('title','PPDB | All Data')
+@section('title','PPDB | Info Forms')
 
-@section('title-page', 'Daftar semua data peserta')
+@section('title-page', 'List Forms')
 
 @section('container')
 <div class="card-header pb-0 mb-0 d-flex justify-content-end">

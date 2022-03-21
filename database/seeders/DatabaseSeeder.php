@@ -58,6 +58,12 @@ class DatabaseSeeder extends Seeder
             'slug' => 'rekayasa-perangkat-lunak',
             'kampus' => '02'
         ]);
+
+        Form::create([
+            'nameLable' => 'name',
+            'nameInput' => 'Rekayasa Perangkat Lunak',
+            'type' => 'rekayasa-perangkat-lunak',
+        ]);
         
         // Student::factory(6)->create();
 
