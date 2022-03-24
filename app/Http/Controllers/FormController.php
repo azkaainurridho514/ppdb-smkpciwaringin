@@ -20,7 +20,7 @@ class FormController extends Controller
     public function index()
     {
         return view('administrator.form.index', [
-            'form' => Form::all()
+            'forms' => Form::all()
         ]);
     }
 
@@ -43,7 +43,7 @@ class FormController extends Controller
     public function store(Request $request)
     {
         
-        
+        return $request;
         
     }
 
@@ -66,7 +66,7 @@ class FormController extends Controller
      */
     public function edit(Form $form)
     {
-        //
+        return view('administrator.form.update');
     }
 
     /**
