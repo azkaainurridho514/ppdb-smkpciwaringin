@@ -37,6 +37,12 @@
                     </label>
                 </div> 
                 <div class="form-check" style="margin-right: 10px">
+                    <input class="form-check-input" type="checkbox" name="type" value="textarea" id="checkbox">
+                    <label class="form-check-label" for="checkbox">
+                      Text Panjang
+                    </label>
+                </div> 
+                <div class="form-check" style="margin-right: 10px">
                     <input class="form-check-input" type="checkbox" name="type" value="select" id="checkbox">
                     <label class="form-check-label" for="checkbox">
                       Select
