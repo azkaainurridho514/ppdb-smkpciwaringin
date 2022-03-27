@@ -49,7 +49,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-dark">Program Keahlian Yang Di Pilih :</label>
-                    <select class="form-select @error('program_id') is-invalid @enderror" name="program_id">
+                    <select class="form-select @error('programId') is-invalid @enderror" name="programId">
                         @foreach ($programs as $program)
                         <option name="" value="{{ $program->programId }}" {{ ($student->program->nama == $program->nama)?'selected':"" }}>{{ $program->nama }}</option>
                         @endforeach

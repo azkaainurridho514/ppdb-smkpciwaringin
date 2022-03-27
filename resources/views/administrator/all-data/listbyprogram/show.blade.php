@@ -18,12 +18,12 @@
               <th scope="col">Nama</th>
             </tr>
           </thead>
-          <tbody>
+          {{-- {{ $students }} --}}
               @foreach ($students as $student)    
               <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $student->no_peserta }}</td>
-                  <td>{{ $student->nama }}</td>
+                   <td>{{ $student->no_peserta }}</td>
+                  <td>{{ $student->nama_lengkap }}</td>
               </tr>
               @endforeach
           </tbody>

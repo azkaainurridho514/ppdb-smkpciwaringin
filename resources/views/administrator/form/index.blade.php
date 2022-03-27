@@ -26,10 +26,27 @@
                <td>{{ $form->nameLable }}</td>
                <td>{{ $form->nameInput }}</td>
                <td>{{ $form->type }}</td>
-               <td>
-                   <a href="/forms/{{ $form->id }}/edit" class="badge bg-success">Edit</a>
+               @if($form->type == 'select')
+                  @if($form->nameInput == 'programId')
+                    <td>
+                       <!-- <a href="/forms/{{ $form->id }}/edit" class="badge bg-warning">Edit</a>
+                       <a href="" class="badge bg-danger">Delete</a> -->
+                       <small class="text-danger"> Tambah option ada di menu Programs  </small>
+                    </td>
+                  @else
+                    <td>
+                       <a href="/forms/{{ $form->id }}/edit" class="badge bg-warning">Edit</a>
+                       <a href="" class="badge bg-danger">Delete</a>
+                       <a href="/option/create/{{ $form->nameInput }}" class="badge bg-success">Add Option</a>
+                   </td>
+                  @endif
+               
+                @else
+                <td>
+                   <a href="/forms/{{ $form->id }}/edit" class="badge bg-warning">Edit</a>
                    <a href="" class="badge bg-danger">Delete</a>
                </td>
+               @endif
             </tr>
             @endforeach 
 

@@ -14,7 +14,7 @@ class Student extends Model
     
     public function program()
     {
-        return $this->belongsTo(Program::class);
+        return $this->belongsTo(Program::class, $foreignKey = 'programId', $localKey = 'programId');
     }
 
     public function getRouteKeyName()

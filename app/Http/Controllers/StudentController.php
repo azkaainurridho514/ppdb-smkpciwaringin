@@ -188,7 +188,7 @@ class StudentController extends Controller
             'tanggal_lahir' => 'required',
             'jk' => 'required',
             'agama' => 'required',
-            'program_id' => 'required',
+            'programId' => 'required',
             'ukuran_baju' => 'required',
             'no_hp' => 'required',
             'anak_ke' => 'required',
@@ -207,8 +207,8 @@ class StudentController extends Controller
         
         $carbon = Carbon::now();
         $year = $carbon->year . $carbon->year + 1;
-        $t_campus = DB::table('programs')->select('kampus')->where('programId', $request->program_id)->get();
-        $program = $request->program_id;
+        $t_campus = DB::table('programs')->select('kampus')->where('programId', $request->programId)->get();
+        $program = $request->programId;
         $old_no_peserta = $student->no_peserta;
         $new_no_peserta  = substr($old_no_peserta, -3);
         $format_peserta = $program . $new_no_peserta;

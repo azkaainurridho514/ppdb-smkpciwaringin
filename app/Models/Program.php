@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
+    
+    protected $guarded = ['id'];
+
     public function student()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Student::class, $foreignKey = 'programId', $localKey = 'programId');
     }
     public function getRouteKeyName()
     {

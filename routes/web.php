@@ -144,5 +144,5 @@ Route::get('/list', function(){
 });
 
 Route::get('/list/{program:slug}', function(Program $program){
-    return view('administrator.all-data.listbyprogram.show', ['students' => Student::latest()->where('program_id', $program)->get()]);
+    return view('administrator.all-data.listbyprogram.show', ['students' => Student::where('programId', $program->programId)->get()]);
 });
